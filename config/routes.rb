@@ -235,6 +235,8 @@ Loomio::Application.routes.draw do
     end
   end
 
+  get 'discussions/:id/print' => 'discussions#print', as: :print_discussion
+
   scope module: :discussions, path: 'd', slug: slug_regex do
     get    ':id(/:slug)', action: 'show' #,    as: :discussion
     patch  ':id(/:slug)', action: 'update'
